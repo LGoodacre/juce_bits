@@ -4,6 +4,14 @@
     AsynchronousValueTreeSynchroniser.h
     Created: 4 Aug 2020 8:58:13am
     Author:  L.Goodacre
+    
+    This class can be used to make shadow of a ValueTree in a thread safe way.
+    ValueTreeSynchroniser is used to pick up the changes made to a ValueTree,
+    which are then placed into a lock free FiFo. You can then update the shadow
+    ValueTree from another thread by calling updateShadowValueTree().
+    
+    It hasn't been rigorously tested and there may be mistakes. Please let me
+    know if you spot any.
 
   ==============================================================================
 */
